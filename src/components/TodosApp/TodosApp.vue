@@ -9,14 +9,15 @@ const todos = ref<Todo[]>(JSON.parse(localStorage.getItem('vue-todo') || '[]'))
 const isCheckAll = ref(false)
 const editingTodo = ref<Todo | null>(null)
 function addTodo(e: KeyboardEvent) {
-  const value = (e.target as HTMLInputElement).value.trim()
+  const target = e.target as HTMLInputElement
+  const value = target.value.trim()
   if (value) {
     todos.value.push({
       id: Math.floor(Math.random() * Date.now()).toString(16),
       name: value,
       completed: false
     })
-    e.target.value = ''
+    target.value = ''
   }
 }
 
@@ -40,7 +41,7 @@ function editTodo(todo: Todo) {
 function cancelEdit() {
   editingTodo.value = null
 }
-function checkAll(e: Event) {
+function checkAll() {
   isCheckAll.value = !isCheckAll.value
   todos.value.forEach((todo) => (todo.completed = isCheckAll.value))
 }
@@ -61,7 +62,7 @@ function checkAll(e: Event) {
         type="text"
         v-if="editingTodo?.id === todo.id"
         v-model="editingTodo.name"
-        @vue:mounted="({ el }) => el.focus()"
+        @vue:mounted="({ el }: any) => el.focus()"
         @blur="(e) => doneEdit(e, todo)"
         @keyup.enter="(e) => doneEdit(e, todo)"
         @keyup.escape="cancelEdit"
