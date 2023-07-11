@@ -1,9 +1,6 @@
 <script setup lang="ts">
-import TodosApp from './components/TodosApp/TodosApp.vue'
+import DoubleClick from './components/DoubleClick/DoubleClick.vue'
 </script>
 <template>
-  <TodosApp />
+  <DoubleClick />
 </template>
-
-<style scoped></style>
-./components/DataGrid/FilteredTable.vue

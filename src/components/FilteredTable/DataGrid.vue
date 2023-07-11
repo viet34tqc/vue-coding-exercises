@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { TGridColumn, TGridData } from '@/App.vue'
 import { capitalize, computed, ref } from 'vue'
+import type { TGridColumn, TGridData } from './FilteredTable.vue'
 
 type Props = {
   data: TGridData
