@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import DoubleClick from './components/DoubleClick/DoubleClick.vue'
+import AvatarGroup from './components/AvatarGroup/AvatarGroup.vue'
 </script>
 <template>
-  <DoubleClick />
+  <AvatarGroup />
 </template>
