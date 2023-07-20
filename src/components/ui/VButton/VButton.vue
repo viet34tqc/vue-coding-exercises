@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import clsx from 'clsx'
-import type { ButtonHTMLAttributes, LinkHTMLAttributes } from 'vue'
 import type { RouterLinkProps } from 'vue-router'
-import type { LinkHTMLAttr } from './types'
+import type { BtnHTMLAttr, LinkHTMLAttr } from './types'
 
 // Here is tailwind class for variants
 const variants = {
@@ -14,12 +13,14 @@ type BaseProps = {
   variant?: keyof typeof variants
 }
 
-type ButtonOrAnchorProps = BaseProps & ButtonHTMLAttributes & LinkHTMLAttributes
+type ButtonOrAnchorProps = BaseProps & BtnHTMLAttr & LinkHTMLAttr
 type ButtonAsRouterLink = BaseProps & RouterLinkProps & LinkHTMLAttr
 type ButtonProps = ButtonAsRouterLink | ButtonOrAnchorProps
 
-const props = defineProps<ButtonProps>()
-
+const props = withDefaults(defineProps<ButtonProps>(), {
+  variant: 'primary'
+})
+const newProps = { ...props }
 // Here you can add style from tailwind, below is the demo
 const className = clsx(
   'flex items-center justify-center px-4 py-2 rounded font-medium focus:outline-none',

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AvatarGroup from './components/AvatarGroup/AvatarGroup.vue'
+import LovelyDots from './components/LovelyDots/LovelyDots.vue'
 </script>
 <template>
-  <AvatarGroup />
+  <LovelyDots />
 </template>
