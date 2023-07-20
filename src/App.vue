@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import LovelyDots from './components/LovelyDots/LovelyDots.vue'
+import ColorPicker from './components/ColorPicker/ColorPicker.vue'
 </script>
 <template>
-  <LovelyDots />
+  <ColorPicker />
 </template>
