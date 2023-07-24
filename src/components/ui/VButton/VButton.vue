@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import clsx from 'clsx'
-import type { RouterLinkProps } from 'vue-router'
 import type { BtnHTMLAttr, LinkHTMLAttr } from './types'
 
 // Here is tailwind class for variants
@@ -14,8 +13,7 @@ type BaseProps = {
 }
 
 type ButtonOrAnchorProps = BaseProps & BtnHTMLAttr & LinkHTMLAttr
-type ButtonAsRouterLink = BaseProps & RouterLinkProps & LinkHTMLAttr
-type ButtonProps = ButtonAsRouterLink | ButtonOrAnchorProps
+type ButtonProps = ButtonOrAnchorProps
 
 const props = withDefaults(defineProps<ButtonProps>(), {
   variant: 'primary'

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ColorPicker from './components/ColorPicker/ColorPicker.vue'
+import ContactBook from './components/ContactBook/ContactBook.vue'
 </script>
 <template>
-  <ColorPicker />
+  <ContactBook />
 </template>
